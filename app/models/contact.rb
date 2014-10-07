@@ -9,6 +9,9 @@ class Contact < ActiveRecord::Base
   protected
 
     def has_at_least_one_option
-      self.class.valid_options.any? {|option| read_attribute(option).present?}
+      valid_option_present = self.class.valid_options.any? {|option| read_attribute(option).present?}
+      unless valid_option_present
+        errors.add(:base, "No valid contact option is present")
+      end
     end
 end
