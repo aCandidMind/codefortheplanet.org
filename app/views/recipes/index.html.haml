@@ -7,8 +7,9 @@
     %article
       %h2= link_to recipe.name, recipe
       .description= recipe.description
-      %td= link_to 'Edit', edit_recipe_path(recipe)
-      %td= link_to 'Destroy', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      .actions
+        = link_to 'Edit', edit_recipe_path(recipe)
+        = link_to 'Destroy', recipe, method: :delete, data: {confirm: 'Are you sure?'}
 
 
 
