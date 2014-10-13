@@ -4,10 +4,8 @@ one:
   name: MyString
   description: MyText
   website: MyString
-  votes: 1
 
 two:
   name: MyString
   description: MyText
   website: MyString
-  votes: 1
