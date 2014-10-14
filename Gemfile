@@ -34,6 +34,9 @@ gem 'foundation-rails'
 gem 'haml-rails'
 gem 'simple_form'
 
+# For tagging
+gem "rocket_tag"  , github: 'blotto/rocket_tag', branch: "master", ref: "73660d3cbd"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

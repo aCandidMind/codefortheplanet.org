@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/blotto/rocket_tag.git
+  revision: 73660d3cbdb0314a4af4a90e91fe43d817a1fd91
+  ref: 73660d3cbd
+  branch: master
+  specs:
+    rocket_tag (0.5.6)
+      activerecord (>= 3.2.0)
+      polyamorous (>= 0.6)
+      squeel (>= 1.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -86,6 +97,8 @@ GEM
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     pg (0.17.1)
+    polyamorous (1.1.0)
+      activerecord (>= 3.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -129,6 +142,10 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    squeel (1.2.1)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      polyamorous (~> 1.1.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -154,6 +171,7 @@ DEPENDENCIES
   minitest-rails-capybara
   pg
   rails (= 4.1.6)
+  rocket_tag!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form
