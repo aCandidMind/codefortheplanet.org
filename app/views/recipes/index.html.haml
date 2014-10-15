@@ -2,14 +2,14 @@
   = link_to 'New Recipe', new_recipe_path
 
 %section#recipes
-  - @recipes.each do |recipe|
-    %article
-      %h2= link_to recipe.name, recipe
-      .description= recipe.description
-      .actions
-        = link_to 'Edit', edit_recipe_path(recipe)
-        = link_to 'Destroy', recipe, method: :delete, data: {confirm: 'Are you sure?'}
-
-
-
-
+  - @tags.each do |tag|
+    %section{id: tag.name.parameterize('_'), class: 'tag'}
+      %h1= tag.name
+      - tag.taggings.each do |tagging|
+        - recipe = tagging.taggable
+        %article
+          %h3= link_to recipe.name, recipe
+          .description= recipe.description
+          .actions
+            = link_to 'Edit', edit_recipe_path(recipe)
+            = link_to 'Destroy', recipe, method: :delete, data: {confirm: 'Are you sure?'}

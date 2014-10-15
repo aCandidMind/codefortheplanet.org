@@ -4,7 +4,9 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    # list recipes grouped by tag
+    #TODO Building a presenter here, would clean up the view. See issue #2.
+    @tags = RocketTag::Tag.all
   end
 
   # GET /recipes/1
