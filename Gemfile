@@ -35,7 +35,8 @@ gem 'haml-rails'
 gem 'simple_form'
 
 # For tagging
-gem "rocket_tag"  , github: 'blotto/rocket_tag', branch: "master", ref: "73660d3cbd"
+gem "squeel", github: 'activerecord-hackery/squeel', ref: 'f5a810ca27' # dependency of the tagging gem rocket_tag
+gem "rocket_tag", github: 'blotto/rocket_tag', ref: "73660d3cbd"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
