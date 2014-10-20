@@ -1,5 +1,6 @@
 $include-html-global-classes: false;
-@import "foundation/components/global";
+@import "foundation_overrides";
+@import 'foundation';
 @import "mixins";
 
 
@@ -13,6 +14,7 @@ $include-html-global-classes: false;
 
 .recipe {
   background-color: $primary-color;
+  color: $secondary-color;
   padding: 5px;
   @include radius(5px);
 }
