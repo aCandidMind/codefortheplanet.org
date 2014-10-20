@@ -1,42 +1,20 @@
-body {
-  background-color: #14456E;
-  color: #FFFFFF;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
+$include-html-global-classes: false;
+@import "foundation/components/global";
+@import "mixins";
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
 
-h1 {
-  color: #FFFFFF;
-}
-
-pre {
-  background-color: #eee;
+.tag h1 {
+  background-color: #2D8AD8;
+  margin: 20px 0;
+  display: inline-block;
   padding: 10px;
-  font-size: 11px;
+  @include radius(30px);
 }
 
-a {
-  color: #2D8AD8;
-  &:hover {
-    color: #319ff9;
-  }
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
-#notice {
-  color: green;
+.recipe {
+  background-color: $primary-color;
+  padding: 5px;
+  @include radius(5px);
 }
 
 .field_with_errors {

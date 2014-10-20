@@ -4,11 +4,11 @@
 %section#recipes
   - @tags.each do |tag|
     %section{id: tag.name.parameterize('_'), class: 'tag'}
-      %h1= tag.name
+      %h1= tag.name.titleize
       - tag.taggings.each do |tagging|
         - recipe = tagging.taggable
-        %article
-          %h3= link_to recipe.name, recipe
+        %article.recipe
+          %h2= link_to recipe.name, recipe
           .description= recipe.description
           .actions
             = link_to 'Edit', edit_recipe_path(recipe)
