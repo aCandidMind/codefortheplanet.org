@@ -9,7 +9,7 @@ feature "Recipe Topic Tags" do
   scenario "tagging a recipe makes it appear under that tag section" do
     tag_name = "Extensions & Plugins"
     tag_as_id = tag_name.parameterize('_')
-    tag_recipe(tag_name, :topics)
+    tag_recipe(tag_name, :tech)
     visit recipes_path
     within "##{tag_as_id}.tag" do
       assert_content(recipe.name)
