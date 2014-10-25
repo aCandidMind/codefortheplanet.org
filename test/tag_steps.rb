@@ -1,8 +1,8 @@
 module TagSteps
-  def tag_recipe(tag)
-    recipe.topics = [tag]
+  def tag_recipe(tag, taxonomy)
+    recipe.send("#{taxonomy}=", [tag])
     recipe.save!
     recipe.reload
-    recipe.topics.must_include(tag.downcase)
+    recipe.send(taxonomy).must_include(tag.downcase)
   end
 end

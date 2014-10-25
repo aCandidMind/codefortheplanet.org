@@ -7,9 +7,9 @@ feature "Recipe Topic Tags" do
   given(:recipe) { recipes(:one) }
 
   scenario "tagging a recipe makes it appear under that tag section" do
-    tag_name = "Planning Tools & Disaster Management"
+    tag_name = "Extensions & Plugins"
     tag_as_id = tag_name.parameterize('_')
-    tag_recipe(tag_name)
+    tag_recipe(tag_name, :topics)
     visit recipes_path
     within "##{tag_as_id}.tag" do
       assert_content(recipe.name)
