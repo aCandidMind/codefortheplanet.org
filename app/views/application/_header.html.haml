@@ -1,0 +1,15 @@
+%header
+  %nav
+    = link_to 'List by tech', recipes_path
+    |
+    = link_to 'List by purpose', recipes_path(taxonomy: :purposes)
+    - case action_name
+    - when 'index'
+      |
+      = link_to 'New Recipe', new_recipe_path
+    - when 'edit'
+      |
+      = link_to 'Show', @recipe
+    - when 'show'
+      |
+      = link_to 'Edit', edit_recipe_path(@recipe)
