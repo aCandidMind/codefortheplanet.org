@@ -99,6 +99,7 @@ $font-family-sans-serif: Verdana, "Helvetica Neue", Helvetica, Roboto, Arial, sa
 // We use these as default colors throughout
 $primary-color: #319ff9;
 $secondary-color: #14456E;
+$tertiary-color: #2D8AD8; // non-default, added by app
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -448,7 +449,7 @@ $anchor-font-color-hover: scale-color($white, $lightness: -14%);
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: $tertiary-color;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);

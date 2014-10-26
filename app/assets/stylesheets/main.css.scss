@@ -4,21 +4,21 @@ $include-html-global-classes: false;
 @import "mixins";
 
 body header {
-  background-color: #2D8AD8;
+  background-color: $tertiary-color;
   padding: 10px;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 .tag h1 {
-  background-color: #2D8AD8;
+  background-color: $tertiary-color;
   margin: 40px 0 20px;
   display: inline-block;
   padding: 10px;
   @include radius(30px);
 }
 
-.recipe {
+.recipe, form {
   background-color: $primary-color;
   color: $secondary-color;
   padding: 5px;
