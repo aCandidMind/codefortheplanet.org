@@ -21,7 +21,7 @@ header#main_header {
 .recipe, #recipe {
   background-color: $primary-color;
   color: $secondary-color;
-  padding: 5px;
+  padding: 12px;
   @include radius(5px);
 }
 
