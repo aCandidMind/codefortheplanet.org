@@ -3,7 +3,7 @@ $include-html-global-classes: false;
 @import 'foundation';
 @import "mixins";
 
-body header {
+header#main_header {
   background-color: $tertiary-color;
   padding: 10px;
   margin-bottom: 10px;
@@ -18,7 +18,7 @@ body header {
   @include radius(30px);
 }
 
-.recipe, form {
+.recipe, #recipe {
   background-color: $primary-color;
   color: $secondary-color;
   padding: 5px;
