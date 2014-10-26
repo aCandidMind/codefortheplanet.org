@@ -7,7 +7,10 @@ class RecipesController < ApplicationController
     # list recipes grouped by tag
     #TODO Building a presenter here, would clean up the view. See issue #2.
     # Get tags, join them with their taggings & taggables to prevent n+1 queries.
-    @taxonomy = :tech # this will soon be controlled with a parameter
+    @taxonomy = (params[:taxonomy] || :tech).to_sym
+    unless @taxonomy.in?(Recipe.rocket_tag.contexts)
+      render nothing: true, status: 400 and return
+    end
     @tags = Recipe.tags(on: @taxonomy).includes(taggings: :taggable)
   end
 
