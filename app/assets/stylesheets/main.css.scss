@@ -3,10 +3,16 @@ $include-html-global-classes: false;
 @import 'foundation';
 @import "mixins";
 
+body header {
+  background-color: #2D8AD8;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
 
 .tag h1 {
   background-color: #2D8AD8;
-  margin: 20px 0;
+  margin: 40px 0 20px;
   display: inline-block;
   padding: 10px;
   @include radius(30px);
