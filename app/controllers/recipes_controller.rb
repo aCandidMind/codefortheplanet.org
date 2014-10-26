@@ -6,7 +6,9 @@ class RecipesController < ApplicationController
   def index
     # list recipes grouped by tag
     #TODO Building a presenter here, would clean up the view. See issue #2.
-    @tags = RocketTag::Tag.all
+    # Get tags, join them with their taggings & taggables to prevent n+1 queries.
+    @taxonomy = :tech # this will soon be controlled with a parameter
+    @tags = Recipe.tags(on: @taxonomy).includes(taggings: :taggable)
   end
 
   # GET /recipes/1
