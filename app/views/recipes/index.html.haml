@@ -1,4 +1,8 @@
 %header
+  = link_to 'Group by tech', recipes_path
+  |
+  = link_to 'Group by purpose', recipes_path(taxonomy: :purposes)
+  |
   = link_to 'New Recipe', new_recipe_path
 
 %section#recipes
