@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # setting secret_key_base here to not be forced to commit secrets.yml
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
