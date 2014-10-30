@@ -5,8 +5,9 @@ $ ->
   tag_fields = $('select.tags')
   tag_fields.each (index, element) =>
     select = $(element)
-    tags = select.find('option').contents().map (index, element) =>
-      element.data
+    textNodes = select.find('option').contents()
+    tags = $.map(textNodes, (element) =>
+      element.textContent)
     input = $(window[element.id + "_html"])
     select.replaceWith(input)
     input.select2(tags: tags)
