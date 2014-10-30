@@ -13,5 +13,6 @@
  *= require_tree .
  *= require_self
  *= require foundation_overrides
+ *= require select2-foundation5
 
  */
