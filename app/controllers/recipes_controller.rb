@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :get_preset_tags, only: [:new, :edit]
 
   # GET /recipes
   # GET /recipes.json
@@ -38,7 +39,10 @@ class RecipesController < ApplicationController
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
-        format.html { render :new }
+        format.html {
+          get_preset_tags
+          render :new
+        }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
@@ -52,7 +56,10 @@ class RecipesController < ApplicationController
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipe }
       else
-        format.html { render :edit }
+        format.html {
+          get_preset_tags
+          render :edit
+        }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
@@ -78,5 +85,10 @@ class RecipesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
       params.require(:recipe).permit(:name, :description)
+    end
+
+    def get_preset_tags
+      @tech_tags = Recipe.tags(on:  :tech).where(preset: true)
+      @purpose_tags = Recipe.tags(on:  :purposes).where(preset: true)
     end
 end
