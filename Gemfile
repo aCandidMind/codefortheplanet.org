@@ -45,6 +45,9 @@ gem "select2-rails"
 # Use unicorn as the app server
 gem 'unicorn'
 
+# Deployment specific
+gem 'rails_12factor', group: :production # for heroku
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
