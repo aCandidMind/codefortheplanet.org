@@ -47,7 +47,10 @@ gem "select2-rails"
 gem 'unicorn'
 
 # Deployment specific
-gem 'rails_12factor', group: :production # for heroku
+group :production do
+  gem 'rails_12factor' # for heroku
+  gem 'rack-canonical-host' # codefortheplanet.herokuapp.com -> www.codefortheplanet.org
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
