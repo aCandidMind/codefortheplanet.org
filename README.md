@@ -22,11 +22,15 @@ Run `rake db:setup` to let rails create the databases and run the migrations for
 As soon as there are some seeds in `db/seeds.rb` to bootstrap you with data, you can run `rake db:seed` to
 have it created. 
 
-## Running the test suite
+## Running test suite & server
 
-Nothing special
+Nothing special, to run the test suite
 
     bundle exec rake test
+
+That server will boot up if you run
+
+	bundle exec rails s
 
 ## Deployment instructions
 
