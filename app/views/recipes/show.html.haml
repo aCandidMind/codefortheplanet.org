@@ -1,8 +1,8 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @recipe.name
-%p
-  %b Description:
-  = @recipe.description
+%section#recipe
+  %header
+    %p#notice= notice
+    %h1= @recipe.name
+  %article
+    %p
+      %b Description:
+      = @recipe.description
