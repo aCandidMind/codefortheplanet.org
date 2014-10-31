@@ -13,6 +13,15 @@ You will need to install postgres as this is the database in use. On unix enviro
 install a development package as well, it might be called `libpq-dev`. Full installation instructions can be found
 on the web for almost every imaginable combination. 
 
+## Database Configuration & Setup
+
+If you intend to have non-default database names or authentication set things up in `config/database.yml`
+
+Run `rake db:setup` to let rails create the databases and run the migrations for you.
+ 
+As soon as there are some seeds in `db/seeds.rb` to bootstrap you with data, you can run `rake db:seed` to
+have it created. 
+
 ## Running the test suite
 
 Nothing special
@@ -21,24 +30,8 @@ Nothing special
 
 ## Deployment instructions
 
-The project is deployed via the heroku toolbelt. If you want to join the development regularly contact [@code4theplanet](http://twitter.com/code4theplanet) on twitter.
-
-## Usage
-
-There are quite some steps left necessary that are necessary to get the application up and running and which are not
-documented yet. These should be documented soon, feel free to add your notes.
-
-Things you may want to cover:
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* ...
+The project is deployed via the heroku toolbelt. If you want to join the development regularly contact
+[@code4theplanet](http://twitter.com/code4theplanet) on twitter.
 
 
 ## Contact
