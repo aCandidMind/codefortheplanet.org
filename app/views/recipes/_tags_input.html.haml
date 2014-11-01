@@ -1,4 +1,5 @@
+- id = "#{context}_tags"
 = f.input context, input_html: {value: tags_value_string(f, context),
-                                id: context, class: 'tags'}
+                                id: id, class: 'tags'}
 :javascript
-  window['#{context}_values'] = #{options.map(&:name)};
+  window['#{id}_options'] = #{options.map(&:name)};

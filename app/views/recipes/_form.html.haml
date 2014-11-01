@@ -4,8 +4,8 @@
   .form-inputs
     = f.input :name
     = f.input :description
-    = render partial: 'tags_input', locals: {context: :tech_tags, options: tech_tags, f: f}
-    = render partial: 'tags_input', locals: {context: :purposes_tags, options: purpose_tags, f: f}
+    = render partial: 'tags_input', locals: {context: :tech, options: tech_tags, f: f}
+    = render partial: 'tags_input', locals: {context: :purposes, options: purpose_tags, f: f}
 
   .form-actions
     = f.button :submit

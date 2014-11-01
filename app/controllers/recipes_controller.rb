@@ -84,7 +84,17 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :tech_tags, :purposes_tags)
+      result = params.require(:recipe).permit(:name, :description, :tech, :purposes)
+
+      # split tag strings on comma for all tag contexts
+      Recipe.rocket_tag.contexts.each do |context|
+        tag_string = result[context]
+        if tag_string.present?
+          result[context] = tag_string.split(',')
+        end
+      end
+
+      result
     end
 
     def get_preset_tags

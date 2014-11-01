@@ -5,5 +5,5 @@ $ ->
   tag_fields = $('input.tags')
   tag_fields.each (index, element) =>
     input = $(element)
-    tags = window[element.id + '_values']
+    tags = window[element.id + '_options']
     input.select2(tags: tags)
