@@ -32,6 +32,9 @@ That server will boot up if you run
 
 	bundle exec rails s
 
+Currently there's an index.html maintenance page that will show up on the root route. You can either delete it or
+go to /recipes
+
 ## Deployment instructions
 
 The project is deployed via the heroku toolbelt. If you want to join the development regularly contact
