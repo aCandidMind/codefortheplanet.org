@@ -1,3 +1,4 @@
-= f.association context, collection: options, input_html: {id: context, class: 'tags'}, hint: multiselection_hint
+= f.input context, input_html: {value: tags_value_string(f, context),
+                                id: context, class: 'tags'}
 :javascript
-  window['#{context}_html'] = '#{text_input_for_tags(f, context)}';
+  window['#{context}_values'] = #{options.map(&:name)};
