@@ -3,11 +3,23 @@ $include-html-global-classes: false;
 @import 'foundation';
 @import "mixins";
 
+
+$main-header-padding: 10px;
 header#main_header {
   background-color: $tertiary-color;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: $main-header-padding;
+  margin-bottom: $main-header-padding;
   text-transform: uppercase;
+  height: 92 + 2 * $main-header-padding;
+
+  nav {
+    display: inline;
+  }
+
+  #logo {
+    position: absolute;
+    right: $main-header-padding;
+  }
 }
 
 .tag h1 {
