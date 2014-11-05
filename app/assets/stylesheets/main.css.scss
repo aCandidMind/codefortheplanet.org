@@ -35,6 +35,10 @@ header#main_header {
   padding: 12px;
   margin-bottom: 20px;
   @include radius(5px);
+
+  h2 {
+    font-size: $h3-font-size;
+  }
 }
 
 .field_with_errors {
