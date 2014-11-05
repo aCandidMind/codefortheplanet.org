@@ -28,6 +28,7 @@ header#main_header {
   background-color: $primary-color;
   color: $secondary-color;
   padding: 12px;
+  margin-bottom: 20px;
   @include radius(5px);
 }
 
