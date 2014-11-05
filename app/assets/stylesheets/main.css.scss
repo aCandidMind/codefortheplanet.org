@@ -11,8 +11,13 @@ header#main_header {
   margin-bottom: $main-header-padding;
   text-transform: uppercase;
 
+  nav {
+    margin-bottom: 20px;
+  }
+
   #logo img {
     float: right;
+    margin-top: 5px;
   }
 }
 
