@@ -1,5 +1,5 @@
-%header#main_header
-  %nav
+%header#main_header.row
+  %nav.small-8.columns
     = link_to 'List by tech', recipes_path
     |
     = link_to 'List by purpose', recipes_path(taxonomy: :purposes)
@@ -13,5 +13,5 @@
     - when 'show'
       |
       = link_to 'Edit', edit_recipe_path(@recipe)
-  %span#logo
+  %span#logo.small-4.columns
     %img{src: image_path('logo.png'), title: "the code for the planet logo"}

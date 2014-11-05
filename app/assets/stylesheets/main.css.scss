@@ -7,18 +7,12 @@ $include-html-global-classes: false;
 $main-header-padding: 10px;
 header#main_header {
   background-color: $tertiary-color;
-  padding: $main-header-padding;
+  padding: $main-header-padding 0;
   margin-bottom: $main-header-padding;
   text-transform: uppercase;
-  height: 92 + 2 * $main-header-padding;
 
-  nav {
-    display: inline;
-  }
-
-  #logo {
-    position: absolute;
-    right: $main-header-padding;
+  #logo img {
+    float: right;
   }
 }
 
