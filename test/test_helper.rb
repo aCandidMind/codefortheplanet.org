@@ -4,8 +4,12 @@ require 'rails/test_help'
 require "minitest/rails"
 require "minitest/rails/capybara"
 
-# Uncomment for awesome colorful output
-# require "minitest/pride"
+require 'minitest/reporters'
+if ENV["RM_INFO"] || ENV["TEAMCITY_VERSION"] # RubyMine
+  MiniTest::Reporters.use! MiniTest::Reporters::RubyMineReporter.new
+else
+  MiniTest::Reporters.use! MiniTest::Reporters::SpecReporter.new
+end
 
 
 class ActiveSupport::TestCase

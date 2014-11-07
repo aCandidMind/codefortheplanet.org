@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :test do
+  gem "minitest-reporters"
   gem "minitest-rails-capybara"
 end
 
