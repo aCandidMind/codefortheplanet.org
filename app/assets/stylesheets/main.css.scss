@@ -38,11 +38,17 @@ header#main_header {
 
   h2 {
     font-size: $h3-font-size;
+    margin-bottom: $main-header-padding;
+  }
+
+  .row {
+    display: inline;
   }
 
   .contact {
     background-color: $tertiary-color;
-    min-height: 150px;
+    padding: $main-header-padding;
+    min-height: 75px;
   }
 }
 

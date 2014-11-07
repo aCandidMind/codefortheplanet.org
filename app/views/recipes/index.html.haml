@@ -8,13 +8,12 @@
       - tag.taggings.each do |tagging|
         - recipe = tagging.taggable
         %article.recipe
+          %h2= link_to recipe.name, recipe
           .row
-            %h2= link_to recipe.name, recipe
-          .row
-            .small-7.columns.description= recipe.description
+            .small-7.columns.description= truncate(recipe.description, length: 300, omission: '... (read more)')
             .small-5.columns.contact
               %strong= Contact.model_name.human
-              - contact = recipe.contacts.only(:name, :twitter_handle).first
+              - contact = recipe.contacts.first
               - if contact
                 %dl
                   %dt= Recipe.human_attribute_name('name')
