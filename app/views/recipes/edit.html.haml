@@ -1,4 +1,5 @@
+- provide :page_title, localized_model_string('record.edit', Recipe, name: @recipe.name)
 %section#recipe
   %header
-    %h1 Edit Recipe
+    %h1= localized_model_string('record.edit', Recipe, name: nil) # name: nil is important because of I18n interpolation
   = render 'form', tech_tags: @tech_tags, purpose_tags: @purpose_tags

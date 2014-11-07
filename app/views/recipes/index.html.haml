@@ -1,6 +1,7 @@
+- provide :page_title, localized_model_string('record.index', Recipe, count: 2, taxonomy: @taxonomy.to_s.singularize)
 %section#recipes
   %header
-    %h1 Recipes grouped by #{@taxonomy.to_s.singularize}
+    %h1= yield :page_title
   - @tags.each do |tag|
     %section{id: tag.name.parameterize('_'), class: 'tag'}
       %h1= tag.name.titleize

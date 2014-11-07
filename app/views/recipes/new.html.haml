@@ -1,4 +1,5 @@
+- provide :page_title, localized_model_string('record.new', Recipe)
 %section#recipe
   %header
-    %h1 New Recipe
+    %h1= yield :page_title
   = render 'form', tech_tags: @tech_tags, purpose_tags: @purpose_tags

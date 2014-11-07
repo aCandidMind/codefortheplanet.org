@@ -5,7 +5,7 @@
 
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0" }
 
-    %title code for the planet
+    %title code for the planet #{" - #{yield(:page_title) if content_for?(:page_title)}"}
 
     = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag "vendor/modernizr"

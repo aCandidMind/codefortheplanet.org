@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  record:
+    index: "%{class_name} grouped by %{taxonomy}"
+    new: "New %{class_name}"
+    edit: "Edit %{class_name} %{name}"
+  activerecord:
+    models:
+      recipe:
+        one: "Recipe"
+        other: "Recipes"
