@@ -2,7 +2,7 @@
   = f.error_notification
 
   .form-inputs
-    = field_set_tag nil, id: 'recipe-fields' do
+    = field_set_tag t('main_recipe_fields'), id: 'recipe-fields' do
       = f.input :name
       = f.input :description
       = render partial: 'tags_input', locals: {context: :tech, options: tech_tags, f: f}

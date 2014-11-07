@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  main_recipe_fields: "Recipe Details"
   primary_contact: "Primary Contact"
   record:
     index: "%{class_name} grouped by %{taxonomy}"
