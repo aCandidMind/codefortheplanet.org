@@ -2,14 +2,14 @@
 
 full:
   name: Alice Waters
-  website: MyString
-  email: MyString
-  telephone: MyString
-  twitter_handle: MyString
-  facebook_name: MyString
-  google_plus_name: MyString
-  street: MyString
-  country: MyString
+  website: https://en.wikipedia.org/wiki/Alice_Waters
+  email: test@anydomain.tld
+  telephone: +1 123 456789
+  twitter_handle: @AliceWaters
+  facebook_name: Alice Waters
+  google_plus_name: Alice Waters
+  street: Some Street 123
+  country: USA
   recipes: one
 
 minimum:
