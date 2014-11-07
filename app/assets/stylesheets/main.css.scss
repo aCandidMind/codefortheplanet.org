@@ -39,6 +39,11 @@ header#main_header {
   h2 {
     font-size: $h3-font-size;
   }
+
+  .contact {
+    background-color: $tertiary-color;
+    min-height: 150px;
+  }
 }
 
 .field_with_errors {

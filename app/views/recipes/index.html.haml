@@ -8,8 +8,20 @@
       - tag.taggings.each do |tagging|
         - recipe = tagging.taggable
         %article.recipe
-          %h2= link_to recipe.name, recipe
-          .description= recipe.description
-          .actions
-            = link_to 'Edit', edit_recipe_path(recipe)
-            = link_to 'Destroy', recipe, method: :delete, data: {confirm: 'Are you sure?'}
+          .row
+            %h2= link_to recipe.name, recipe
+          .row
+            .small-7.columns.description= recipe.description
+            .small-5.columns.contact
+              %strong= Contact.model_name.human
+              - contact = recipe.contacts.only(:name, :twitter_handle).first
+              - if contact
+                %dl
+                  %dt= Recipe.human_attribute_name('name')
+                  %dd= contact.name
+                  %dt= Recipe.human_attribute_name('twitter_handle')
+                  %dd= contact.name
+          - if params[:admin]
+            .row.actions
+              = link_to 'Edit', edit_recipe_path(recipe)
+              = link_to 'Destroy', recipe, method: :delete, data: {confirm: 'Are you sure?'}
