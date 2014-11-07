@@ -34,7 +34,7 @@ end
 
 gem 'foundation-rails'
 gem 'haml-rails'
-gem 'simple_form'
+gem 'simple_form', github: 'plataformatec/simple_form', ref: '6f2a610150' # remove once that commit is in a gem release
 gem 'country_select'
 
 # For tagging
