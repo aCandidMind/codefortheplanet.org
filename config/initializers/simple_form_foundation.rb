@@ -2,10 +2,6 @@
 SimpleForm.setup do |config|
   # Don't forget to edit this file to adapt it to your needs (specially
   # all the grid-related classes)
-  #
-  # Please note that hints are commented out by default since Foundation
-  # does't provide styles for hints. You will need to provide your own CSS styles for hints.
-  # Uncomment them to enable hints.
 
   config.wrappers :vertical_form, class: :input, hint_class: :field_with_hint, error_class: :error do |b|
     b.use :html5
@@ -17,7 +13,9 @@ SimpleForm.setup do |config|
     b.use :label_input
     b.use :error, wrap_with: { tag: :small, class: :error }
 
-    # b.use :hint,  wrap_with: { tag: :span, class: :hint }
+    # Please note that hints are commented out by default since Foundation
+    # doesn't provide styles for hints. You will need to provide your own CSS styles for hints.
+    b.use :hint,  wrap_with: { tag: :span, class: :hint }
   end
 
   config.wrappers :horizontal_form, tag: 'div', class: 'row', hint_class: :field_with_hint, error_class: :error do |b|
