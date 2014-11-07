@@ -35,6 +35,7 @@ end
 gem 'foundation-rails'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'country_select'
 
 # For tagging
 gem "squeel", github: 'activerecord-hackery/squeel', ref: 'f5a810ca27' # dependency of the tagging gem rocket_tag

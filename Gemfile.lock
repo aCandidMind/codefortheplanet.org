@@ -64,6 +64,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    country_select (2.1.0)
+      countries (~> 0.9, >= 0.9.3)
+    currencies (0.4.2)
     erubis (2.7.0)
     execjs (2.2.1)
     foundation-rails (5.4.5.0)
@@ -193,6 +198,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  country_select
   foundation-rails
   haml-rails
   jbuilder (~> 2.0)
