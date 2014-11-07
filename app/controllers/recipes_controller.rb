@@ -23,6 +23,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @recipe.contacts.build
   end
 
   # GET /recipes/1/edit
@@ -41,6 +42,7 @@ class RecipesController < ApplicationController
       else
         format.html {
           get_preset_tags
+          @recipe.contacts.build if @recipe.contacts.empty?
           render :new
         }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }

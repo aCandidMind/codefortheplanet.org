@@ -2,10 +2,23 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :description
-    = render partial: 'tags_input', locals: {context: :tech, options: tech_tags, f: f}
-    = render partial: 'tags_input', locals: {context: :purposes, options: purpose_tags, f: f}
+    = field_set_tag nil, id: 'recipe-fields' do
+      = f.input :name
+      = f.input :description
+      = render partial: 'tags_input', locals: {context: :tech, options: tech_tags, f: f}
+      = render partial: 'tags_input', locals: {context: :purposes, options: purpose_tags, f: f}
 
+    = field_set_tag t('primary_contact'), id: 'contact-fields' do
+      = f.fields_for :contacts, defaults: {required: false} do |contact|
+        = contact.input :name
+        = contact.input :telephone, as: :tel
+        = contact.input :website, as: :url
+        = contact.input :email, as: :email
+        = contact.input :twitter_handle # value: contact.object.twitter_handle || '@'
+        = contact.input :facebook_name
+        = contact.input :google_plus_name
+        = contact.input :street
+        = contact.input :country, as: :country, prompt: t('simple_form.placeholders.contacts.country')
+      
   .form-actions
     = f.button :submit

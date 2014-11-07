@@ -8,6 +8,22 @@ en:
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
+    placeholders:
+      recipe:
+        name: 'Name.'
+        description: 'Description.'
+        tech: 'Tech tags: choose from existing or enter new ones.'
+        purposes: 'Purpose tags: choose from existing or enter new ones.'
+      contacts: # the s is appended because simple_form uses the relation path for lookup
+        name: 'Name, try to be as precise as possible.'
+        telephone: 'Telephone, start with country calling codes, e.g. +1 for USA and +47 79 for Svalbard.'
+        website: 'Website of the contact or its organization or project.'
+        email: 'Email address where contact is most likely to respond.'
+        twitter_handle: 'Twitter handle starting with @.'
+        facebook_name: 'Name of Contact on Facebook, be as precise as possible.'
+        google_plus_name: 'Name of Contact on Google+, be as precise as possible.'
+        street: 'Street, may be followed by house number.'
+        country: 'Choose a country where the contact is mostly resident.'
     error_notification:
       default_message: "Please review the problems below:"
     # Examples
