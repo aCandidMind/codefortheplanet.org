@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+full:
+  name: Alice Waters
   website: MyString
   email: MyString
   telephone: MyString
@@ -10,14 +10,14 @@ one:
   google_plus_name: MyString
   street: MyString
   country: MyString
+  recipes: one
 
-two:
-  name: MyString
-  website: MyString
-  email: MyString
-  telephone: MyString
-  twitter_handle: MyString
-  facebook_name: MyString
-  google_plus_name: MyString
-  street: MyString
-  country: MyString
+minimum:
+  name: Minimum Fields
+  recipes: one
+
+only_recipes:
+  recipes: two
+
+only_name:
+  name: John Doe
