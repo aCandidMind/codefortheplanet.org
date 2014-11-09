@@ -4,5 +4,7 @@ class CreateRecipesContacts < ActiveRecord::Migration
       t.integer :recipe_id, null: false
       t.integer :contact_id, null: false
     end
+
+    add_index :recipes_contacts, [:recipe_id, :contact_id], unique: true
   end
 end

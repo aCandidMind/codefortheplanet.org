@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20141107013508) do
     t.integer "contact_id", null: false
   end
 
+  add_index "recipes_contacts", ["recipe_id", "contact_id"], name: "index_recipes_contacts_on_recipe_id_and_contact_id", unique: true, using: :btree
+
   create_table "recipes_projects", id: false, force: true do |t|
     t.integer "project_id", null: false
     t.integer "recipe_id",  null: false
