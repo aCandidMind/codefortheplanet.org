@@ -28,6 +28,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    @recipe.contacts.build if @recipe.contacts.empty?
   end
 
   # POST /recipes
@@ -60,6 +61,7 @@ class RecipesController < ApplicationController
       else
         format.html {
           get_preset_tags
+          @recipe.contacts.build if @recipe.contacts.empty?
           render :edit
         }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
@@ -86,7 +88,11 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      result = params.require(:recipe).permit(:name, :description, :tech, :purposes)
+      contacts_attributes = {contacts_attributes: [
+        :name, :website, :email, :telephone, :twitter_handle, :facebook_name, :google_plus_name, :street, :country
+      ]}
+
+      result = params.require(:recipe).permit(:name, :description, :tech, :purposes, contacts_attributes)
 
       # split tag strings on comma for all tag contexts
       Recipe.rocket_tag.contexts.each do |context|

@@ -2,7 +2,6 @@ class Contact < ActiveRecord::Base
 
   has_and_belongs_to_many :recipes, join_table: :recipes_contacts
 
-  validates_presence_of :recipes
   validate :has_at_least_one_option
 
   def self.valid_options
