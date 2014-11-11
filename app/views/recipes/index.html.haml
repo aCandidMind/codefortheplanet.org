@@ -15,11 +15,19 @@
               %strong= Contact.model_name.human
               - contact = recipe.contacts.first
               - if contact
-                %dl
-                  %dt= Recipe.human_attribute_name('name')
-                  %dd= contact.name
-                  %dt= Recipe.human_attribute_name('twitter_handle')
-                  %dd= contact.name
+                %ul.small-block-grid-2
+                  - if contact.country.present?
+                    %li
+                      %span{class: "fi-general-globe", title: "Country"}
+                      %span{title: contact.country_name}= contact.country
+                  - contact_options(contact).each do |option, icon_name, link_text, link_target|
+                    %li
+                      %span{class: icon_name, title: option.to_s.humanize}
+                      = link_to(link_text, link_target)
+              - else
+                %p
+                  = t('no_contact')
+
           - if params[:admin]
             .row.actions
               = link_to 'Edit', edit_recipe_path(recipe)

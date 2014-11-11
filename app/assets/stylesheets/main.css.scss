@@ -48,7 +48,10 @@ header#main_header {
   .contact {
     background-color: $tertiary-color;
     padding: $main-header-padding;
-    min-height: 75px;
+
+    span > * {
+      color: $white;
+    }
   }
 }
 
