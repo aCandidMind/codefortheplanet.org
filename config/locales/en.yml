@@ -24,6 +24,8 @@ en:
   primary_contact: "Primary Contact"
   no_contact: "No Contact provided yet"
   read_more: "(read more)"
+  ingredients: "Ingredients (PREVIEW, NYI)"
+  steps: "Steps for implementing it (PREVIEW, NYI)"
   record:
     index: "%{class_name} grouped by %{taxonomy}"
     new: "New %{class_name}"

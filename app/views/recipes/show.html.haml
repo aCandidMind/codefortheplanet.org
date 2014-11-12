@@ -4,6 +4,25 @@
     %p#notice= notice
     %h1= @recipe.name
   %article
-    %p
-      %b Description:
-      = @recipe.description
+    .row
+      .small-6.columns.description= sanitize(@recipe.description)
+      .small-6.columns.contact
+        = render partial: 'contact', locals: {recipe: @recipe}
+    .row
+      .small-6.columns
+        %h2= t('ingredients')
+        %p
+          %em The following text is exemplary and will generally be provided by recipe creators and other site users as well.
+        %ul
+          %li Some technical concept
+          %li Another technical concept
+          %li Backend recommendations
+      .small-6.columns
+        %h2= t('steps')
+        %p
+          %em The following text is exemplary and will generally be provided by recipe creators and other site users as well.
+        %ul
+          %li First of all get an idea of technical concept X if you haven't yet
+          %li Download the open data from LINK
+          %li Use tool Y / make sure that you have preprocessed/localized it
+          %li Contact the contact listed above and ask about aspect Z

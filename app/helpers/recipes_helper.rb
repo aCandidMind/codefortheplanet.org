@@ -21,7 +21,8 @@ module RecipesHelper
       link_text = contact.send(option)
       if option == :website
         # TODO remove scheme
-        link_text = truncate(link_text, length: 20)
+        length = action_name == 'index' ? 20 : 28
+        link_text = truncate(link_text, length: length)
       end
       link_target = contact_link(option, link_text)
       [option, icon_name, link_text, link_target]

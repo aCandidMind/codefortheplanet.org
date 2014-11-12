@@ -13,21 +13,7 @@
             .small-7.columns.description
               = truncate(sanitize(recipe.description), length: 300, escape: false, omission: read_more(recipe))
             .small-5.columns.contact
-              %strong= Contact.model_name.human
-              - contact = recipe.contacts.first
-              - if contact
-                %ul.small-block-grid-2
-                  - if contact.country.present?
-                    %li
-                      %span{class: "fi-general-globe", title: "Country"}
-                      %span{title: contact.country_name}= contact.country
-                  - contact_options(contact).each do |option, icon_name, link_text, link_target|
-                    %li
-                      %span{class: icon_name, title: option.to_s.humanize}
-                      = link_to(link_text, link_target)
-              - else
-                %p
-                  = t('no_contact')
+              = render partial: 'contact', locals: {recipe: recipe}
 
           - if params[:admin]
             .row.actions
