@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 full:
-  name: Alice Waters
-  website: https://en.wikipedia.org/wiki/Alice_Waters
-  email: test@anydomain.tld
-  telephone: +1 123 456789
-  twitter_handle: @AliceWaters
-  facebook_name: Alice Waters
-  google_plus_name: Alice Waters
-  street: Some Street 123
-  country: USA
+  name: "Alice Waters"
+  website: "https://en.wikipedia.org/wiki/Alice_Waters"
+  email: "test@anydomain.tld"
+  telephone: "+1 123 456789"
+  twitter_handle: "@AliceWaters"
+  facebook_name: "Alice Waters"
+  google_plus_name: "Alice Waters"
+  street: "Some Street 123"
+  country: "USA"
   recipes: one
 
 minimum:
-  name: Minimum Fields
+  name: "Minimum Fields"
   recipes: one
 
 only_recipes:
   recipes: two
 
 only_name:
-  name: John Doe
+  name: "John Doe"
