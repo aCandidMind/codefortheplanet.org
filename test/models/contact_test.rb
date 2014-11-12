@@ -19,7 +19,8 @@ class ContactTest < ActiveSupport::TestCase
 
   test "should not save without belonging to any recipes" do
     contact = contacts(:only_name)
-    refute contact.save, "contact doesn't belong to any recipe and thus should not save"
+    # TODO temporarily disabled in the model and thus fails
+    refute contact.save, "temp. disabled, thus fails: contact doesn't belong to any recipe and thus should not save"
   end
 
   test "should save with minimum fields" do
