@@ -19,6 +19,10 @@ module RecipesHelper
     set.map do |option|
       icon_name = icon_names[option]
       link_text = contact.send(option)
+      if option == :website
+        # TODO remove scheme
+        link_text = truncate(link_text, length: 20)
+      end
       link_target = contact_link(option, link_text)
       [option, icon_name, link_text, link_target]
     end
