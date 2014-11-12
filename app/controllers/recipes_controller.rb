@@ -89,7 +89,7 @@ class RecipesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
       contacts_attributes = {contacts_attributes: [
-        :name, :website, :email, :telephone, :twitter_handle, :facebook_name, :google_plus_name, :street, :country
+        :id, :name, :website, :email, :telephone, :twitter_handle, :facebook_name, :google_plus_name, :street, :country
       ]}
 
       result = params.require(:recipe).permit(:name, :description, :tech, :purposes, contacts_attributes)
