@@ -37,7 +37,11 @@ module RecipesHelper
       twitter_handle: "https://twitter.com/",
       facebook_name: "https://www.facebook.com/search/results/?init=quick&q=",
     }
-    value = value.sub('@', '') if key == :twitter_handle
+    if key == :telephone
+      value = value.gsub(' ', '-')
+    elsif key == :twitter_handle
+      value = value.sub('@', '')
+    end
     base_url[key] + value
   end
 
