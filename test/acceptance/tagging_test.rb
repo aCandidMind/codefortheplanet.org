@@ -4,6 +4,8 @@ require 'tag_steps'
 feature "Recipe has independent tag taxonomies" do
   include TagSteps
 
+  TAG_SECTION_CLASS = 'tag_section'
+
   given(:recipe) { recipes(:one) }
   given(:tag_name) { "Extensions & Plugins" }
   given(:tag_as_id) { tag_name.parameterize('_') }
@@ -14,14 +16,14 @@ feature "Recipe has independent tag taxonomies" do
 
   scenario "tagged recipe appears under standard taxonomy when none was chosen" do
     visit recipes_path
-    within "##{tag_as_id}.tag" do
+    within "##{tag_as_id}.#{TAG_SECTION_CLASS}" do
       assert_content(recipe.name)
     end
   end
 
   scenario "tagged recipe doesn't appear under different taxonomy" do
     visit recipes_path(taxonomy: :purposes)
-    assert_no_css("##{tag_as_id}.tag")
+    assert_no_css("##{tag_as_id}.#{TAG_SECTION_CLASS}")
     assert_no_content(recipe.name)
   end
 
@@ -33,7 +35,7 @@ feature "Recipe has independent tag taxonomies" do
         tag_as_id = tag_name.parameterize('_')
         tag_recipe(tag_name, taxonomy)
         visit recipes_path(taxonomy: taxonomy)
-        within "##{tag_as_id}.tag" do
+        within "##{tag_as_id}.#{TAG_SECTION_CLASS}" do
           assert_content(recipe.name)
         end
       end

@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @tags = @recipe.taggings.includes(:tag).group_by {|t| t.context}
   end
 
   # GET /recipes/new

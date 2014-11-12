@@ -3,6 +3,12 @@
   %header
     %p#notice= notice
     %h1= @recipe.name
+    - @tags.each do |context, taggings|
+      .row
+        %span.small-2.columns= Recipe.human_attribute_name(context)
+        %ul.inline-list.small-10.columns
+          - taggings.each do |tagging|
+            %li.tag= tagging.tag.name
   %article
     .row
       .small-6.columns.description= sanitize(@recipe.description)

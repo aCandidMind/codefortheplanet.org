@@ -21,12 +21,15 @@ header#main_header {
   }
 }
 
-.tag h1 {
+.tag_section h1, .tag {
   background-color: $tertiary-color;
-  margin: 40px 0 20px;
   display: inline-block;
   padding: 10px;
   @include radius(30px);
+}
+
+.tag_section h1 {
+  margin: 40px 0 20px;
 }
 
 .recipe, #recipe {
@@ -35,6 +38,10 @@ header#main_header {
   padding: 12px;
   margin-bottom: 20px;
   @include radius(5px);
+
+  header .row {
+    display: inherit;
+  }
 
   h2 {
     font-size: $h3-font-size;

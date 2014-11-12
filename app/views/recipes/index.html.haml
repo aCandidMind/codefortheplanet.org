@@ -3,7 +3,7 @@
   %header
     %h1= yield :page_title
   - @tags.each do |tag|
-    %section{id: tag.name.parameterize('_'), class: 'tag'}
+    %section{id: tag.name.parameterize('_'), class: 'tag_section'}
       %h1= tag.name.titleize
       - tag.taggings.each do |tagging|
         - recipe = tagging.taggable
