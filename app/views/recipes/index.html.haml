@@ -11,7 +11,7 @@
           %h2= link_to recipe.name, recipe
           .row
             .small-7.columns.description
-              = truncate(sanitize(recipe.description), length: 300, escape: false, omission: read_more(recipe))
+              = truncate(strip_tags(recipe.description), length: 300, escape: false, omission: read_more(recipe))
             .small-5.columns.contact
               = render partial: 'contact', locals: {recipe: recipe}
 
