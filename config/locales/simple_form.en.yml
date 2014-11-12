@@ -19,7 +19,7 @@ en:
         telephone: 'Telephone, start with country calling codes, e.g. +1 for USA and +47 79 for Svalbard.'
         website: 'Website of the contact or its organization or project.'
         email: 'Email address where contact is most likely to respond.'
-        twitter_handle: 'Twitter handle starting with @.'
+        twitter_handle: 'Twitter handle, not display name, starts with @.'
         facebook_name: 'Name of Contact on Facebook, be as precise as possible.'
         google_plus_name: 'Name of Contact on Google+, be as precise as possible.'
         street: 'Street, may be followed by house number.'

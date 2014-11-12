@@ -16,6 +16,15 @@ module RecipesHelper
       twitter_handle: "fi-social-twitter",
       facebook_name: "fi-social-facebook",
     }
+    set.map do |option|
+      icon_name = icon_names[option]
+      link_text = contact.send(option)
+      link_target = contact_link(option, link_text)
+      [option, icon_name, link_text, link_target]
+    end
+  end
+
+  def contact_link(key, value)
     base_url = {
       website: "",
       email: "mailto:",
@@ -23,12 +32,8 @@ module RecipesHelper
       twitter_handle: "https://twitter.com/",
       facebook_name: "https://www.facebook.com/search/results/?init=quick&q=",
     }
-    set.map do |option|
-      icon_name = icon_names[option]
-      link_text = contact.send(option)
-      link_target = base_url[option] + link_text
-      [option, icon_name, link_text, link_target]
-    end
+    value = value.sub('@', '') if key == :twitter_handle
+    base_url[key] + value
   end
 
   def read_more(recipe)

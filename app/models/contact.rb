@@ -10,6 +10,14 @@ class Contact < ActiveRecord::Base
     %w{name website email telephone twitter_handle facebook_name }
   end
 
+  def twitter_handle
+    "@#{super}"
+  end
+
+  def twitter_handle=(handle)
+    super(handle.sub('@', ''))
+  end
+
   # Assuming country_select is used with Contact attribute `country`
   # This will attempt to translate the country name and use the default
   # (usually English) name if no translation is available
