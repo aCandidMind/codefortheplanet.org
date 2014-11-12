@@ -31,4 +31,8 @@ module RecipesHelper
     end
   end
 
+  def read_more(recipe)
+    "... #{link_to t('read_more'), recipe_path(recipe)}"
+  end
+
 end

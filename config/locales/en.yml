@@ -23,6 +23,7 @@ en:
   main_recipe_fields: "Recipe Details"
   primary_contact: "Primary Contact"
   no_contact: "No Contact provided yet"
+  read_more: "(read more)"
   record:
     index: "%{class_name} grouped by %{taxonomy}"
     new: "New %{class_name}"
