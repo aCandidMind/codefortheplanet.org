@@ -6,10 +6,10 @@
       %li
         %span{class: "fi-general-globe", title: "Country"}
         %span{title: contact.country_name}= contact.country
-    - contact_options(contact).each do |option, icon_name, link_text, link_target|
+    - contact_options(contact).each do |option, icon_name, link|
       %li
         %span{class: icon_name, title: option.to_s.humanize}
-        = link_to(link_text, link_target)
+        = link
 - else
   %p
     = t('no_contact')

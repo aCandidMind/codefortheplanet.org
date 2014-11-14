@@ -24,25 +24,33 @@ module RecipesHelper
         length = action_name == 'index' ? 20 : 28
         link_text = truncate(link_text, length: length)
       end
-      link_target = contact_link(option, link_text)
-      [option, icon_name, link_text, link_target]
+      link = contact_link(option, link_text)
+      [option, icon_name, link]
     end
   end
 
-  def contact_link(key, value)
+  def contact_link(key, link_text)
     base_url = {
       website: "",
-      email: "mailto:",
+      email: "",
       telephone: "tel:",
       twitter_handle: "https://twitter.com/",
       facebook_name: "https://www.facebook.com/search/results/?init=quick&q=",
     }
-    if key == :telephone
-      value = value.gsub(' ', '-')
-    elsif key == :twitter_handle
-      value = value.sub('@', '')
+
+    if key == :email
+      mail_to(link_text, link_text, encode: "hex")
+    else
+      if key == :telephone
+        url_friendly_value = link_text.gsub(' ', '-')
+      elsif key == :twitter_handle
+        url_friendly_value = link_text.sub('@', '')
+      else
+        url_friendly_value = link_text
+      end
+      link_target = base_url[key] + url_friendly_value
+      link_to(link_text, link_target)
     end
-    base_url[key] + value
   end
 
   def read_more(recipe)
