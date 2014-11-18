@@ -12,13 +12,13 @@ class RecipesController < ApplicationController
     unless @taxonomy.in?(Recipe.rocket_tag.contexts)
       render nothing: true, status: 400 and return
     end
-    @tags = Recipe.tags(on: @taxonomy).includes(taggings: :taggable)
+    @tags = Recipe.tags(on: @taxonomy).includes(taggings: :taggable).where(preset: true).order(:name)
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-    @tags = @recipe.taggings.includes(:tag).group_by {|t| t.context}
+    @tags = @recipe.taggings.includes(:tag).order("tags.preset", "tags.name").group_by {|t| t.context}
   end
 
   # GET /recipes/new
@@ -107,7 +107,7 @@ class RecipesController < ApplicationController
     end
 
     def get_preset_tags
-      @tech_tags = Recipe.tags(on:  :tech).where(preset: true)
-      @purpose_tags = Recipe.tags(on:  :purposes).where(preset: true)
+      @tech_tags = Recipe.tags(on:  :tech).order(:preset, :name)
+      @purpose_tags = Recipe.tags(on:  :purposes).order(:preset, :name)
     end
 end
