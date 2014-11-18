@@ -63,3 +63,8 @@ Recipe.create(
 #   tech: [""],
 #   purposes: [""],
 # )
+
+# Make all tags defined here preset tags, those are used as categories for the listings
+RocketTag::Tag.all.each do |tag|
+  tag.update!(preset: true)
+end
