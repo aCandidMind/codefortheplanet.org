@@ -3,7 +3,25 @@ codefortheplanet.org
 
 Serves as an inspiration and information tool for software developers wanting to make the world a little bit better.
 
-The site at http://www.codefortheplanet.org is not yet considered "launched" ;-) This should happen in between the next 12 hours.
+It can be considered a directory of recipes for software projects, each belonging to certain technical concepts or
+technologies. Just as well their eventual product serves specific purposes into which the recipes are categorized
+as well.
+
+The site at http://www.codefortheplanet.org is not yet considered "launched" ;-) It will gradually improve.
+
+## Development State / Next Steps
+
+There's no user system/login yet. Currently the way to edit/delete recipes is to append ?admin=1 to the URL.
+It's perfectly clear that everybody can edit and delete any recipe on the site this way. But currently that doesn't
+matter too much. The user system for editing, deleting and voting on recipes will follow soon.
+
+The contacts of recipes will get a mail (if an email address was provided) and it will be possible for visitors to 
+contact them via a contact form. It would be much preferred to just list email addresses of the contacts but that
+will make email spiders just too happy and thus contact forms are one of the very few sensible solutions.
+
+If you have better ideas for email contact please open an issue here. Or if you want to jump in on development of 
+those features, just do so and see the contribution guidelines below.
+
 
 ## System dependencies
 
